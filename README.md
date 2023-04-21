@@ -4,7 +4,7 @@ Official Pytorch Implementation for "CellGAN: Conditional Cervical Cell Synthesi
 ### Method
 ![Overview of CellGAN](/figures/overview.png "Overview of CellGAN")
 
-CellGAN synthesizes 256×256 cytopathological images of different cervical squamous cell types including NILM, ASC-US, LSIL, ASC-H, and HSIL cells. It serves as an data augmentation tool for automatic cervical abnormality screening.
+CellGAN synthesizes 256×256 cytopathological images of different cervical squamous cell types (`NILM, ASC-US, LSIL, ASC-H, and HSIL`). It serves as an data augmentation tool for automatic cervical abnormality screening.
 
 ### Qualitative Results
 ![Visualization Results](/figures/results.png "Visualization Results")
@@ -18,7 +18,7 @@ CellGAN synthesizes 256×256 cytopathological images of different cervical squam
 
 1. We provide a pre-trained CellGAN generator `checkpoints/model.pth` for synthesizing cytopathological images.
 
-2. Use the following command for synthesizing a certain number of image of a desired cervical cell type.
+2. Use the following command to synthesize a certain number of images for a desired cervical cell type.
 
 ```python
 python cellgan_inference.py --config [config_name] --model [model_path] --output_dir [directory to save generated images] --cell_type [desired cell type] --data_num [number of generated images]
@@ -26,7 +26,9 @@ python cellgan_inference.py --config [config_name] --model [model_path] --output
 
 ## Reproducing Experiments
 ### Data Preparation
-- Split your images into different subdirectories in `DATAROOT` according to the cell types, and prepare a `img_list.txt`. The data directory structure should be prepared as in the following example: 
+- In `DATAROOT`, split your images into different subdirectories according to the cell types and prepare a `img_list.txt`. 
+
+- The directory structure of `DATAROOT` should be prepared as in the following example: 
 
 ```
 DATAROOT
@@ -61,14 +63,14 @@ ASC_US/ASC_US_image_0001.png
 - Set the argument `DATAROOT` in `configs/default_config.yaml` to your training data root. 
 
 ### Training
-Refer to `configs/default_config.yaml` for customizing your own configuration file `configs/{config_name}.yaml`. All the arguments are self-explanatory by their names and comments. Put `{config_name}.yaml` in the directory `configs` and use the following command:
+Refer to `configs/default_config.yaml` for customizing your own configuration file `configs/{config_name}.yaml`. All the arguments are self-explanatory by their names and comments. Use the following command:
 
 ```
 python train.py --config [config_name]
 ```
 
 ### Testing
-Edit testing arguments in `{config_name}.yaml` and use the following command:
+Edit the testing arguments in `configs/{config_name}.yaml` and use the following command:
 
 ```
 python test.py --config [config_name]
