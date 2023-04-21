@@ -43,10 +43,10 @@ DATAROOT
 - The TXT file `img_list.txt` should contain one image path '{category_name}/{image_name}' per line as in the following example.
 
 ```
-NILM/NILM_image_0001.png.png
-NILM/NILM_image_0002.png.png
+NILM/NILM_image_0001.png
+NILM/NILM_image_0002.png
 ......
-ASC_US/ASC_H_image_0001.png
+ASC_US/ASC_US_image_0001.png
 ......
 ```
 
