@@ -24,7 +24,7 @@ CellGAN synthesizes 256×256 cytopathological images of different cervical squam
 python cellgan_inference.py --config [config_name] --model [model_path] --output_dir [directory to save generated images] --cell_type [desired cell type] --data_num [number of generated images]
 ```
 
-## Reproducing Experiments
+## Usage
 ### Data Preparation
 - In `DATAROOT`, split your images into different subdirectories according to the cell types and prepare a `img_list.txt`. 
 
