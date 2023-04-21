@@ -1,5 +1,5 @@
 # CellGAN-for-Cervical-Cell-Synthesis
-Official Pytorch Implementation for "CellGAN: Conditional Cervical Cell Synthesis for Augmenting Cytopathological Image Classification". CellGAN can synthesize 256×256 cytopathological image of different cervical squamous cell types including NILM, ASC-US, LSIL, ASC-H, and HSIL cells. It serves as an data augmentation tool for automatic cervical abnormality screening.
+Official Pytorch Implementation for "CellGAN: Conditional Cervical Cell Synthesis for Augmenting Cytopathological Image Classification". CellGAN can synthesize 256×256 cytopathological images of different cervical squamous cell types including NILM, ASC-US, LSIL, ASC-H, and HSIL cells. It serves as an data augmentation tool for automatic cervical abnormality screening.
 
 ### Environment
 - Python 3.10.10
