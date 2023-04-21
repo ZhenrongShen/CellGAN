@@ -50,7 +50,7 @@ DATAROOT
 └─ img_list.txt
 ```
 
-- The TXT file `img_list.txt` should contain one image path '{category_name}/{image_name}.png' per line as in the following example.
+- The TXT file `img_list.txt` should contain one image path `{category_name}/{image_name}.png` per line as in the following example.
 
 ```
 NILM/NILM_image_0001.png
