@@ -30,7 +30,7 @@ LSIL/case4.png
 ......
 ```
 
-- Edit `configs/default_config.yaml `, change `DATAROOT: DATA/cell_patches` to your data root. 
+- Edit `configs/default_config.yaml `, set `DATAROOT` to your data root. 
 
 ### Training
 ```python
