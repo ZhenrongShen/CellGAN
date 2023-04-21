@@ -18,7 +18,7 @@ python single_test.py --gpu [GPU] --model_path [model_path] --save_dir [set a di
 
 ## Reproducing Experiments
 ### Data Preparation
-- Prepare your training data in `DATAROOT` as: 
+- Prepare your data in `DATAROOT` as: 
 
 ```
 DATAROOT
@@ -53,12 +53,12 @@ ASC_US/ASC_US_image_0001.png
 - Set the argument `DATAROOT` in `configs/default_config.yaml` to your training data root. 
 
 ### Training
-```python
+```
 python train.py --config [config_name.yaml]
 ```
 
 ### Testing
-```python
+```
 python test.py --config [config_name.yaml]
 ```
 
@@ -67,4 +67,5 @@ python test.py --config [config_name.yaml]
 > 
 **Institution:**
 > [1] School of Biomedical Engineering, Shanghai Jiao Tong University, Shanghai, China
+> 
 > [2] School of Biomedical Engineering, ShanghaiTech University, Shanghai, China
