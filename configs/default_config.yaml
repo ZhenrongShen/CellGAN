@@ -1,0 +1,73 @@
+# Dataset
+DATAROOT:                      # directory to prepare your dataset
+DATA_NORM: True                # normalize image to [-1, 1]
+FLIP_AUG: True                 # horizontal/vertical flip augmentation
+NUM_WORKERS: 4                 # how many subprocesses to use for data loading
+
+
+# Network Parameters
+OUT_CHANNELS: 3                # output RGB image channels
+CLASS_NUM: 5                   # number of classes
+COND_SIZE: 128                 # embedding size of class condition
+
+LATENT_DIMS: 128               # basic channels of latent layers
+MAP_LAYERS: 4                  # layer number of class mapping network
+GEN_FEAT_NUM: 32               # basic channel number of generator features
+DIS_FEAT_NUM: 32               # basic channel number of discriminator features
+
+INIT_TYPE: xavier              # initialization [normal | kaiming | xavier | orthogonal]
+INIT_GAIN: 0.02                # initialization gain
+
+
+# Optimization
+LR_G: 2.5e-4                   # learning rate of generator
+LR_D: 2.5e-4                   # learning rate of discriminator
+BETA1: 0.0                     # adam optimizer beta1
+BETA2: 0.999                   # adam optimizer beta2
+
+USE_EMA: True                 # whether to use exponential moving average (EMA)
+EMA_DECAY: 0.999               # decay weight of EMA
+EMA_START: 1000                # which iteration to start EMA
+
+
+# Loss Configuration
+GAN_MODE: hinge                # mode of gan loss [vanilla | lsgan | wgan | hinge]
+RECON_MODE: l1                 # mode of reconstruction loss [l1 | mse], deactivated if None
+D_R1_WEIGHT: 0.01              # weight of R1 regularization
+
+
+# Save Paths
+LOG_PATH:    ./checkpoints/logs       # training log path
+CKPT_PATH:   ./checkpoints/models     # model weights path
+SAMPLE_PATH: ./checkpoints/samples    # training samples path
+
+
+# Training Settings
+DIFF_AUG: color,translation    # differentiable augmentation [color, translation, cutout]
+
+BATCH_SIZE: 64                 # batch size
+TOTAL_ITERS: 100000            # number of training iterations
+DIS_ITERS: 1                   # training steps for discriminator per iteration
+
+LOG_INTERVAL: 1000             # how many iterations to wait before logging training status
+SAVE_START: 10000              # which epoch to start saving models
+SAVE_INTERVAL: 1000            # how many epochs to wait before saving models
+VIS_INTERVAL: 1000             # how many epochs to wait before visualization
+VIS_NUM: 16                    # how many generated cases per category for visualization
+
+PRETRAIN_GEN:                  # which pretrained generator to load
+PRETRAIN_DIS:                  # which discriminator to load
+
+
+# Testing Settings
+MODEL:                         # which generator to test
+TEST_PATH: ./test_results      # testng generated image path
+SAMPLE_NUM: 100                # number of generated images for each category
+EVAL_METRICS: True             # compute evaluation metrics [True | False]
+FID_NUM: 10000                 # how many samples for FID evaluation in each category
+FID_BATCH: 64                  # batch size for FID evaluation
+
+
+# Device
+MANUAL_SEED: 2077              # manual random seed for reproducibility
+GPU: [0]                       # gpu ids
