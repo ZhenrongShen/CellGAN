@@ -1,5 +1,13 @@
 # CellGAN-for-Cervical-Cell-Synthesis
-Official Pytorch Implementation for "CellGAN: Conditional Cervical Cell Synthesis for Augmenting Cytopathological Image Classification". CellGAN can synthesize 256×256 cytopathological images of different cervical squamous cell types including NILM, ASC-US, LSIL, ASC-H, and HSIL cells. It serves as an data augmentation tool for automatic cervical abnormality screening.
+Official Pytorch Implementation for "CellGAN: Conditional Cervical Cell Synthesis for Augmenting Cytopathological Image Classification". 
+
+### Method
+![Overview of CellGAN](/figures/overview.png "Overview of CellGAN")
+
+CellGAN can synthesize 256×256 cytopathological images of different cervical squamous cell types including NILM, ASC-US, LSIL, ASC-H, and HSIL cells. It serves as an data augmentation tool for automatic cervical abnormality screening.
+
+### Qualitative Results
+![Visualization Results](/figures/results.png "Visualization Results")
 
 ### Environment
 - Python 3.10.10
@@ -8,7 +16,7 @@ Official Pytorch Implementation for "CellGAN: Conditional Cervical Cell Synthesi
 
 ### Quick Start
 
-1. We provide a pre-trained model `checkpoints/model.pth` for synthesizing cytopathological images.
+1. We provide a pre-trained CellGAN generator `checkpoints/model.pth` for synthesizing cytopathological images.
 
 2. Use the following command for synthesizing a certain number of image of a desired cervical cell type.
 
@@ -18,7 +26,7 @@ python cellgan_inference.py --config [config_name] --model [model_path] --output
 
 ## Reproducing Experiments
 ### Data Preparation
-- Prepare your data in `DATAROOT` as: 
+- Split your images into different subdirectories in `DATAROOT` according to the cell types, and prepare a `img_list.txt`. The data directory structure should be prepared as in the following example: 
 
 ```
 DATAROOT
@@ -40,7 +48,7 @@ DATAROOT
 └─ img_list.txt
 ```
 
-- The TXT file `img_list.txt` should contain one image path '{category_name}/{image_name}' per line as in the following example.
+- The TXT file `img_list.txt` should contain one image path '{category_name}/{image_name}.png' per line as in the following example.
 
 ```
 NILM/NILM_image_0001.png
@@ -53,15 +61,20 @@ ASC_US/ASC_US_image_0001.png
 - Set the argument `DATAROOT` in `configs/default_config.yaml` to your training data root. 
 
 ### Training
+Refer to `configs/default_config.yaml` for customizing your own configuration file `configs/{config_name}.yaml`. All the arguments are self-explanatory by their names and comments. Put `{config_name}.yaml` in the directory `configs` and use the following command:
+
 ```
 python train.py --config [config_name]
 ```
 
 ### Testing
+Edit testing arguments in `{config_name}.yaml` and use the following command:
+
 ```
-python test.py c
+python test.py --config [config_name]
 ```
 
+## Literature Information
 **Authors:**   
 > Zhenrong Shen[1], Maosong Cao[2], Sheng Wang[1], Lichi Zhang[1], Qian Wang[2]*
 > 
