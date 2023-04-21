@@ -8,12 +8,12 @@ Official Pytorch Implementation for "CellGAN: Conditional Cervical Cell Synthesi
 
 ### Quick Start
 
-1. We provide a pre-trained model `checkpoints/model.pth` for synthesizing cytopathological images of various cervical squamous cell types, including NILM, ASC-US, LSIL, ASC-H, and HSIL.
+1. We provide a pre-trained model `checkpoints/model.pth` for synthesizing cytopathological images.
 
-2. Use the following command for synthesizing a single image of a specified cell type.
+2. Use the following command for synthesizing a certain number of image of a desired cervical cell type.
 
 ```python
-python single_test.py --gpu [GPU] --model_path [model_path] --save_dir [set a dir to save your images] --cell_type [set your desired cell type] 
+python cellgan_inference.py --config [config_name] --model [model_path] --output_dir [directory to save generated images] --cell_type [desired cell type] --data_num [number of generated images]
 ```
 
 ## Reproducing Experiments
@@ -54,12 +54,12 @@ ASC_US/ASC_US_image_0001.png
 
 ### Training
 ```
-python train.py --config [config_name.yaml]
+python train.py --config [config_name]
 ```
 
 ### Testing
 ```
-python test.py --config [config_name.yaml]
+python test.py c
 ```
 
 **Authors:**   
