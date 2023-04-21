@@ -1,5 +1,5 @@
 # CellGAN-for-Cervical-Cell-Synthesis
-Official Pytorch Implementation for "CellGAN: Conditional Cervical Cell Synthesis for Augmenting Cytopathological Image Classification"
+Official Pytorch Implementation for "CellGAN: Conditional Cervical Cell Synthesis for Augmenting Cytopathological Image Classification". CellGAN can synthesize 256×256 cytopathological image of different cervical squamous cell types including NILM, ASC-US, LSIL, ASC-H, and HSIL cells. It serves as an data augmentation tool for automatic cervical abnormality screening.
 
 ### Environment
 - Python 3.10.10
@@ -18,9 +18,9 @@ python single_test.py --gpu [GPU] --model_path [model_path] --save_dir [set a di
 
 ## Reproducing Experiments
 ### Data Preparation
-- Prepare your training data in 'DATAROOT' as: 
+- Prepare your training data in `DATAROOT` as: 
 
-'''
+```
 DATAROOT
 ├─ NILM
 |  ├─ NILM_image_0001.png
@@ -38,9 +38,9 @@ DATAROOT
 |  ├─ HSIL_image_0001.png
 |  └─ ......
 └─ img_list.txt
-'''
+```
 
-- The TXT file `img_list.txt` should contain one image path per line as in the following example.
+- The TXT file `img_list.txt` should contain one image path '{category_name}/{image_name}' per line as in the following example.
 
 ```
 NILM/NILM_image_0001.png.png
@@ -63,7 +63,7 @@ python test.py --config [config_name.yaml]
 ```
 
 **Authors:**   
-> Zhenrong Shen[1], Maosong Cao[2], Sheng Wang[1], Lichi Zhang[1], Qian Wang[2]
+> Zhenrong Shen[1], Maosong Cao[2], Sheng Wang[1], Lichi Zhang[1], Qian Wang[2]*
 > 
 **Institution:**
 > [1] School of Biomedical Engineering, Shanghai Jiao Tong University, Shanghai, China
