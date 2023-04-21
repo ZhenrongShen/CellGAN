@@ -18,19 +18,39 @@ python single_test.py --gpu [GPU] --model_path [model_path] --save_dir [set a di
 
 ## Reproducing Experiments
 ### Data Preparation
-- Split your training data into different directories according to cell types. 
+- Prepare your training data in 'DATAROOT' as: 
 
-- Write the paths of images to `img_list.txt` as in the following example.
+'''
+DATAROOT
+├─ NILM
+|  ├─ NILM_image_0001.png
+|  └─ ......
+├─ ASC_US
+|  ├─ ASC_US_image_0001.png
+|  └─ ......
+├─ LSIL
+|  ├─ LSIL_image_0001.png
+|  └─ ......
+├─ ASC_H
+|  ├─ ASC_H_image_0001.png
+|  └─ ......
+├─ HSIL
+|  ├─ HSIL_image_0001.png
+|  └─ ......
+└─ img_list.txt
+'''
+
+- The TXT file `img_list.txt` should contain one image path per line as in the following example.
 
 ```
-NILM/case1.png
-NILM/case2.png
-ASC_US/case3.png
-LSIL/case4.png
+NILM/NILM_image_0001.png.png
+NILM/NILM_image_0002.png.png
+......
+ASC_US/ASC_H_image_0001.png
 ......
 ```
 
-- Edit `configs/default_config.yaml `, set `DATAROOT` to your data root. 
+- Set the argument `DATAROOT` in `configs/default_config.yaml` to your training data root. 
 
 ### Training
 ```python
