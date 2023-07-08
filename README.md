@@ -79,9 +79,11 @@ python test.py --config [config_name]
 
 ## Literature Information
 **Authors:**   
-> Zhenrong Shen[1], Maosong Cao[2], Sheng Wang[1], Lichi Zhang[1], Qian Wang[2]*
+> Zhenrong Shen[1], Maosong Cao[2], Sheng Wang[1,3], Lichi Zhang[1], Qian Wang[2]*
 > 
 **Institution:**
 > [1] School of Biomedical Engineering, Shanghai Jiao Tong University, Shanghai, China
 > 
 > [2] School of Biomedical Engineering, ShanghaiTech University, Shanghai, China
+>
+> [3] Shanghai United Imaging Intelligence Co., Ltd., Shanghai, China
