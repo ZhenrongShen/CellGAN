@@ -4,7 +4,7 @@ Official Pytorch Implementation for "CellGAN: Conditional Cervical Cell Synthesi
 ### Method
 ![Overview of CellGAN](/figures/overview.png "Overview of CellGAN")
 
-CellGAN synthesizes 256×256 cytopathological images of different cervical squamous cell types (`NILM, ASC-US, LSIL, ASC-H, and HSIL`). It serves as an data augmentation tool for automatic cervical abnormality screening.
+CellGAN synthesizes 256×256 cytopathological images of different cervical squamous cell types (`NILM, ASC-US, LSIL, ASC-H, and HSIL`). It can serve as a data augmentation tool for patch-level cell classification in automatic cervical abnormality screening.
 
 ### Qualitative Results
 ![Visualization Results](/figures/results.png "Visualization Results")
@@ -25,8 +25,12 @@ python cellgan_inference.py --config [config_name] --model [model_path] --output
 ```
 
 ## Usage
-### Data Preparation
-- In `DATAROOT`, split your images into different subdirectories according to the cell types and prepare a `img_list.txt`. 
+### Training
+- Refer to `configs/default_config.yaml` for customizing your own configuration file `configs/{config_name}.yaml`. All the arguments are self-explanatory by their names and comments.
+
+- Set the argument `DATAROOT` in `configs/{config_name}.yaml` to your training data root. 
+
+- In `DATAROOT`, split your images into subdirectories according to the cell types and prepare an `img_list.txt`. 
 
 - The directory structure of `DATAROOT` should be prepared as in the following example: 
 
@@ -60,10 +64,7 @@ ASC_US/ASC_US_image_0001.png
 ......
 ```
 
-- Set the argument `DATAROOT` in `configs/default_config.yaml` to your training data root. 
-
-### Training
-Refer to `configs/default_config.yaml` for customizing your own configuration file `configs/{config_name}.yaml`. All the arguments are self-explanatory by their names and comments. Use the following command:
+- After finishing data preparation, use the following command:
 
 ```
 python train.py --config [config_name]
