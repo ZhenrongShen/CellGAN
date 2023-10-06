@@ -1,5 +1,5 @@
 # CellGAN-for-Cervical-Cell-Synthesis
-Official Pytorch Implementation for "CellGAN: Conditional Cervical Cell Synthesis for Augmenting Cytopathological Image Classification" (Early Accepted in MICCAI 2023) https://arxiv.org/abs/2307.06182. 
+Official Pytorch Implementation for "CellGAN: Conditional Cervical Cell Synthesis for Augmenting Cytopathological Image Classification" (Early Accepted in MICCAI 2023 https://link.springer.com/chapter/10.1007/978-3-031-43987-2_47)
 
 ### Method
 ![Overview of CellGAN](/figures/overview.png "Overview of CellGAN")
@@ -90,3 +90,17 @@ python test.py --config [config_name]
 > 
 **Manuscript Link:**
 > https://arxiv.org/abs/2307.06182 (preprint on arXiv)
+>
+> https://link.springer.com/chapter/10.1007/978-3-031-43987-2_47 (MICCAI 2023, conference version)
+>
+**Citation:**
+```
+@inproceedings{shen2023cellgan,
+  title={CellGAN: Conditional Cervical Cell Synthesis for Augmenting Cytopathological Image Classification},
+  author={Shen, Zhenrong and Cao, Maosong and Wang, Sheng and Zhang, Lichi and Wang, Qian},
+  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
+  pages={487--496},
+  year={2023},
+  organization={Springer}
+}
+```
